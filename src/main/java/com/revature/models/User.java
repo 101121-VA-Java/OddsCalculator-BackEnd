@@ -1,6 +1,13 @@
 package com.revature.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="users")
 public class User {
+	@Id
 	private int userID;
 	private String firstName;
 	private String lastName;
@@ -17,9 +24,9 @@ public class User {
 
 
 
-	public User(int userID, String firstName, String lastName, String password, String email, Role role) {
+	public User( String firstName, String lastName, String password, String email, Role role) {
 		super();
-		this.userID = userID;
+		
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
