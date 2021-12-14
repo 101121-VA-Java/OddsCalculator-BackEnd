@@ -7,31 +7,33 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.revature.Daos.UserDao;
-import com.revature.models.User;
+import com.revature.Daos.HistoryDao;
+import com.revature.models.History;
+
 
 @Service
-public class UserService {
-	private UserDao ud;
+public class HistoryService {
+	private HistoryDao hd;
 	
 	@Autowired
-	public UserService(UserDao ud) {
-		this.ud = ud;
+	public HistoryService(HistoryDao hd) {
+		this.hd = hd;
 	}
 	
 	@Transactional(propagation=Propagation.REQUIRED)
-	public void createUser(User u) {
-		ud.save(u);
+	public void createHistory(History h) {
+		hd.save(h);
 	}
 	
-	public List<User> getAllUsers(){
-		return ud.findAll();
+	public List<History> getAllUsers(){
+		return hd.findAll();
 		
 	}
 	
-	public User getUser(int id){
-		return ud.getById(id);
+	public History getUser(int id){
+		return hd.getById(id);
 		
 	}
+	
 
 }

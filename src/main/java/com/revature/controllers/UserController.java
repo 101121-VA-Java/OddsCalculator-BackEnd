@@ -34,16 +34,24 @@ public class UserController {
 	@CrossOrigin
 	@GetMapping
 	public List<User> getAllUsers(){
-		// if a query param of name "role" is passed in, returns users of this role
-//		if(role != null) {
-//			return us.getUserByRole(role);
-//		}
+
 		System.out.println("Getting All Users");
 		return us.getAllUsers();
 		
 	}
+	
+//	@CrossOrigin
+//	@RequestMapping(method=RequestMethod.GET)
+////	@GetMapping(value="/{id}")
+//	public User getUsers(@RequestParam(name="id", required = true)int id){
+//		
+//		System.out.println("Getting User " + id);
+//		return us.getUser(id);
+//		
+//	}
+	
 	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST, value="/users")
+	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<String> createUser(@RequestBody User user){
 		us.createUser(user);
 		System.out.println("We here!");
