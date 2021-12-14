@@ -1,6 +1,19 @@
 package com.revature.Services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.revature.Daos.HistoryDao;
+
+@Service
 public class RecommendationService {
+private HistoryDao hd;
+
+	
+	@Autowired
+	public HistoryService(HistoryDao hd) {
+		this.hd = hd;
+	}
+	
 
 	public String getRecommendation(String PH, String DH){
 		String[] playerHand = PH.split("_");
@@ -79,6 +92,13 @@ public class RecommendationService {
 		}
 		
 		return rec;
+	}
+	
+	
+	public int addHandToHistory(int id, String PH, String DH, String rec) {
+		History hand = new History(id, PH, rec, DH);
+		hd.save(hand);
+		return gameID;
 	}
 	
 }
