@@ -5,28 +5,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+//import org.springframework.data.annotation.Id;
 
 @Entity
-@Table(name="history")
+@Table(name="History")
 public class History {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int gameID;
-	private int playerID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int game_id;
+	@Column(name = "player_id", nullable=false)
+	private int player_id;
 	@Column(nullable=true)
 	private boolean winner;
-	//private float initialOdds;
-	@Column(nullable=true)
+	@Column(name = "initialodds", nullable=false)
+	private float initialOdds;
+	@Column(name = "balance", nullable=true)
 	private float balance;
+	@Column(name = "initialhand", nullable=false)
 	private String initialHand;
-	private String initialDealerCard;
+	//private String initialDealerCard;
+	@Column(name = "recommend", nullable=false)
 	private String recommendation;
-	@Column(nullable=true)
-	private boolean followedRec;
-	//private int numOfDecks;
+	@Column(name = "followedrec", nullable=true)
+	private boolean followedrec;
+	@Column(name = "numofdecks", nullable=false)
+	private int numOfDecks;
 
 	public History() {
 		// TODO Auto-generated constructor stub
@@ -36,10 +41,13 @@ public class History {
 
 	public History(int playerID, String initialHand, String recommendation, String initialDealerCard) {
 		super();
-		this.playerID = playerID;
+		this.player_id = playerID;
 		this.initialHand = initialHand;
-		this.initialDealerCard = initialDealerCard;
+		//this.initialDealerCard = initialDealerCard;
 		this.recommendation = recommendation;
+		this.initialOdds = 0;
+		this.numOfDecks = 6;
+		this.followedrec = false;
 	}
 
 
@@ -47,15 +55,15 @@ public class History {
 	public History(int gameID, int playerID, boolean winner, float balance, String initialHand,
 			String recommendation, boolean followedRec) {
 		super();
-		this.gameID = gameID;
-		this.playerID = playerID;
+		this.game_id = gameID;
+		this.player_id = playerID;
 		this.winner = winner;
-		//this.initialOdds = initialOdds;
+		this.initialOdds = 0;
 		this.balance = balance;
 		this.initialHand = initialHand;
 		this.recommendation = recommendation;
-		this.followedRec = followedRec;
-		//this.numOfDecks = numOfDecks;
+		this.followedrec = followedRec;
+		this.numOfDecks = 6;
 	}
 
 	@Override
@@ -63,10 +71,10 @@ public class History {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + Float.floatToIntBits(balance);
-		result = prime * result + (followedRec ? 1231 : 1237);
-		result = prime * result + gameID;
+		result = prime * result + (followedrec ? 1231 : 1237);
+		result = prime * result + game_id;
 		result = prime * result + ((initialHand == null) ? 0 : initialHand.hashCode());
-		result = prime * result + playerID;
+		result = prime * result + player_id;
 		result = prime * result + ((recommendation == null) ? 0 : recommendation.hashCode());
 		result = prime * result + (winner ? 1231 : 1237);
 		return result;
@@ -83,16 +91,16 @@ public class History {
 		History other = (History) obj;
 		if (Float.floatToIntBits(balance) != Float.floatToIntBits(other.balance))
 			return false;
-		if (followedRec != other.followedRec)
+		if (followedrec != other.followedrec)
 			return false;
-		if (gameID != other.gameID)
+		if (game_id != other.game_id)
 			return false;
 		if (initialHand == null) {
 			if (other.initialHand != null)
 				return false;
 		} else if (!initialHand.equals(other.initialHand))
 			return false;
-		if (playerID != other.playerID)
+		if (player_id != other.player_id)
 			return false;
 		if (recommendation == null) {
 			if (other.recommendation != null)
@@ -106,25 +114,25 @@ public class History {
 
 	@Override
 	public String toString() {
-		return "History [gameID=" + gameID + ", playerID=" + playerID + ", winner=" + winner + 
+		return "History [gameID=" + game_id + ", playerID=" + player_id + ", winner=" + winner + 
 				", balance=" + balance + ", initialHand=" + initialHand + ", recommendation="
-				+ recommendation + ", followedRec=" + followedRec + "]";
+				+ recommendation + ", followedRec=" + followedrec + "]";
 	}
 
 	public int getGameID() {
-		return gameID;
+		return game_id;
 	}
 
 	public void setGameID(int gameID) {
-		this.gameID = gameID;
+		this.game_id = gameID;
 	}
 
 	public int getPlayerID() {
-		return playerID;
+		return player_id;
 	}
 
 	public void setPlayerID(int playerID) {
-		this.playerID = playerID;
+		this.player_id = playerID;
 	}
 
 	public boolean isWinner() {
@@ -168,11 +176,11 @@ public class History {
 	}
 
 	public boolean isFollowedRec() {
-		return followedRec;
+		return followedrec;
 	}
 
 	public void setFollowedRec(boolean followedRec) {
-		this.followedRec = followedRec;
+		this.followedrec = followedRec;
 	}
 
 //	public int getNumOfDecks() {
@@ -184,13 +192,37 @@ public class History {
 //	}
 
 
-	public String getInitialDealerHand() {
-		return initialDealerCard;
+//	public String getInitialDealerHand() {
+//		return initialDealerCard;
+//	}
+//
+//
+//	public void setInitialDealerHand(String initialDealerCard) {
+//		this.initialDealerCard = initialDealerCard;
+//	}
+
+
+
+	public float getInitialOdds() {
+		return initialOdds;
 	}
 
 
-	public void setInitialDealerHand(String initialDealerCard) {
-		this.initialDealerCard = initialDealerCard;
+
+	public void setInitialOdds(float initialOdds) {
+		this.initialOdds = initialOdds;
+	}
+
+
+
+	public int getNumOfDecks() {
+		return numOfDecks;
+	}
+
+
+
+	public void setNumOfDecks(int numOfDecks) {
+		this.numOfDecks = numOfDecks;
 	}
 	
 	

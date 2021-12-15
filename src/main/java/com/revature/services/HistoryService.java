@@ -25,12 +25,12 @@ public class HistoryService {
 		hd.save(h);
 	}
 	
-	public List<History> getAllUsers(){
+	public List<History> getAllHistory(){
 		return hd.findAll();
 		
 	}
 	
-	public History getUser(int id){
+	public History getHistory(int id){
 		return hd.getById(id);
 		
 	}
