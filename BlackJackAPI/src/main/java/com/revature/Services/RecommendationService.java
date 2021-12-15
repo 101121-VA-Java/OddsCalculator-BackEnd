@@ -1,19 +1,6 @@
 package com.revature.Services;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import com.revature.Daos.HistoryDao;
-
-@Service
 public class RecommendationService {
-private HistoryDao hd;
-
-	
-	@Autowired
-	public HistoryService(HistoryDao hd) {
-		this.hd = hd;
-	}
-	
 
 	public String getRecommendation(String PH, String DH){
 		String[] playerHand = PH.split("_");
@@ -21,9 +8,9 @@ private HistoryDao hd;
 		String type = playerHand[0];
 		
 		switch(type) {
-			case "S": 
+			case "S": softRecommendation(value, DH);
 				break;
-			case "H": 
+			case "H": hardRecommendation(value, DH);
 				break;
 			case "P": pairRecommendation(value, DH);
 				break;
@@ -71,20 +58,20 @@ private HistoryDao hd;
 		}
 		if( (value.equals("4") && DH.equals("5")) || (value.equals("4") && DH.equals("6")) ) {
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Split and double ";
+			rec = "Split and double bet ";
 		} else if(value.equals("4")) {
 			//becomes a hard total -> needs to be passed into hardRecs
 			rec = "Do not split ";
 		}
 		if( (value.equals("3") && DH.equals("2")) || (value.equals("3") && DH.equals("3")) ) {
-			rec = "Split and double ";
+			rec = "Split and double bet ";
 		} else if((value.equals("3") && DH.equals("4")) || (value.equals("3") && DH.equals("5")) || (value.equals("3") && DH.equals("6")) || (value.equals("3") && DH.equals("7")) ) {
 			rec = "Split ";
 		} else if(value.equals("3")) {
 			rec = "Do not split";
 		}
 		if( (value.equals("2") && DH.equals("2")) || (value.equals("2") && DH.equals("3")) ) {
-			rec = "Split and double ";
+			rec = "Split and double bet";
 		} else if((value.equals("2") && DH.equals("4")) || (value.equals("2") && DH.equals("5")) || (value.equals("2") && DH.equals("6")) || (value.equals("2") && DH.equals("7")) ) {
 			rec = "Split ";
 		} else if(value.equals("2")) {
@@ -94,11 +81,56 @@ private HistoryDao hd;
 		return rec;
 	}
 	
+	public String softRecommendation(String value, String DH) {
+		String rec = null;
+		if(value.equals("A9")) {
+			rec = "Stand";
+		}
+		if(value.equals("A8") && DH.equals("6")) {
+			rec = "Double bet and stand";
+		} else if(value.equals("A8")) {
+			rec = "Stand";
+		}
+		if( (value.equals("A7") && DH.equals("9")) || (value.equals("A7") && DH.equals("10")) || (value.equals("A7") && DH.equals("A")) ) {
+			rec = "Hit";
+		} else if( (value.equals("A7") && DH.equals("7")) || (value.equals("A7") && DH.equals("8")) ) {
+			rec = "Stand";
+		} else if (value.equals("A7")) {
+			rec = "Double bet and stand";
+		}
+		if( (value.equals("A6") && DH.equals("3")) || (value.equals("A6") && DH.equals("4")) || (value.equals("A6") && DH.equals("5")) || (value.equals("A6") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if(value.equals("A6")) {
+			rec = "Hit";
+		}
+		if( (value.equals("A5") && DH.equals("4")) || (value.equals("A5") && DH.equals("5")) || (value.equals("A5") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A5") ) {
+			rec = "Hit";
+		}
+		if( (value.equals("A4") && DH.equals("4")) || (value.equals("A4") && DH.equals("5")) || (value.equals("A4") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A4") ) {
+			rec = "Hit";
+		}
+		if( (value.equals("A3") && DH.equals("5")) || (value.equals("A3") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A3") ) {
+			rec = "Hit";
+		}
+		if( (value.equals("A2") && DH.equals("5")) || (value.equals("A2") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A2") ) {
+			rec = "Hit";
+		}
+		return rec;
+		
+	}
 	
-	public int addHandToHistory(int id, String PH, String DH, String rec) {
-		History hand = new History(id, PH, rec, DH);
-		hd.save(hand);
-		return gameID;
+	public String hardRecommendation(String value, String DH) {
+		String rec = null;
+		return rec;
+		
 	}
 	
 }

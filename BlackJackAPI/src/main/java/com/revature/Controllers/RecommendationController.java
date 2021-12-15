@@ -16,10 +16,9 @@ import com.revature.Services.RecommendationService;
 
 public class RecommendationController {
 
-@PostMapping(value="/${id}/${PH}/${DH}")
+@PostMapping(value="/{id}/${PH}/${DH}")
 	public String getUserRecommendation(@RequestParam(name="id", required = true)int id, @RequestParam(name="PH", required = true)String ph, @RequestParam(name="DH", required = true)String dh){
-		
-	return null;
+		return null;
 	}
 
 
