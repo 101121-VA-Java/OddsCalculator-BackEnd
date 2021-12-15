@@ -109,7 +109,15 @@ private HistoryDao hd;
 			rec = "Stand";
 			break;
 		case 16:
+			if(DH.equals("A")||DH.equals("9")) {
+				rec = "Surrender";
+				break;
+			}
 		case 15:
+			if(DH.equals("10")) {
+				rec = "Surrender";
+				break;
+			}
 		case 14:
 		case 13:
 			if(DH.equals("A")||Integer.parseInt(DH)>6) {
