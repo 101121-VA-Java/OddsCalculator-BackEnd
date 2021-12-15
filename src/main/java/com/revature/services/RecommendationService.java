@@ -23,6 +23,7 @@ private HistoryDao hd;
 		String rec = null;
 		switch(type) {
 			case "S": 
+				rec = softRecommendation(value,DH);
 				break;
 			case "H": 
 				rec = hardRecommendation(value, DH);
@@ -95,6 +96,51 @@ private HistoryDao hd;
 		}
 		
 		return rec;
+	}
+	public String softRecommendation(String value, String DH) {
+		String rec = null;
+		if(value.equals("A9")) {
+			rec = "Stand";
+		}
+		if(value.equals("A8") && DH.equals("6")) {
+			rec = "Double bet and stand";
+		} else if(value.equals("A8")) {
+			rec = "Stand";
+		}
+		if( (value.equals("A7") && DH.equals("9")) || (value.equals("A7") && DH.equals("10")) || (value.equals("A7") && DH.equals("A")) ) {
+			rec = "Hit";
+		} else if( (value.equals("A7") && DH.equals("7")) || (value.equals("A7") && DH.equals("8")) ) {
+			rec = "Stand";
+		} else if (value.equals("A7")) {
+			rec = "Double bet and stand";
+		}
+		if( (value.equals("A6") && DH.equals("3")) || (value.equals("A6") && DH.equals("4")) || (value.equals("A6") && DH.equals("5")) || (value.equals("A6") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if(value.equals("A6")) {
+			rec = "Hit";
+		}
+		if( (value.equals("A5") && DH.equals("4")) || (value.equals("A5") && DH.equals("5")) || (value.equals("A5") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A5") ) {
+			rec = "Hit";
+		}
+		if( (value.equals("A4") && DH.equals("4")) || (value.equals("A4") && DH.equals("5")) || (value.equals("A4") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A4") ) {
+			rec = "Hit";
+		}
+		if( (value.equals("A3") && DH.equals("5")) || (value.equals("A3") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A3") ) {
+			rec = "Hit";
+		}
+		if( (value.equals("A2") && DH.equals("5")) || (value.equals("A2") && DH.equals("6")) ) {
+			rec = "Double bet";
+		} else if( value.equals("A2") ) {
+			rec = "Hit";
+		}
+		return rec;
+		
 	}
 	
 	public String hardRecommendation(String value, String DH) {

@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.revature.services.RecommendationService;
 
 @RestController
-//@CrossOrigin
 @RequestMapping("/rec")
 
 public class RecommendationController {
@@ -26,15 +26,15 @@ public class RecommendationController {
 	}
 	
 	@CrossOrigin
-	@PostMapping("/${id}/${PH}/${DH}")
-	public String getUserRecommendation(@RequestParam(name="id", required = true)int id, @RequestParam(name="PH", required = true)String ph, @RequestParam(name="DH", required = true)String dh){
+	@PostMapping("/{id}/{PH}/{DH}")
+	public String getUserRecommendation(@PathVariable(name="id", required = true)int id, @PathVariable(name="PH", required = true)String ph, @PathVariable(name="DH", required = true)String dh){
 		
 	return rs.getRecommendation(ph, dh);
 	}
 
 	@CrossOrigin
-	@GetMapping("/${PH}/${DH}")
-	public String getPlayerRecommendation( @RequestParam(name="PH", required = true)String ph, @RequestParam(name="DH", required = true)String dh){
+	@GetMapping("/{PH}/{DH}")
+	public String getPlayerRecommendation(@PathVariable(name="PH", required = true)String ph, @PathVariable(name="DH", required = true)String dh){
 		
 		return rs.getRecommendation(ph, dh);
 	}
