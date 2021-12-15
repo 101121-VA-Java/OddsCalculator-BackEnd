@@ -1,7 +1,11 @@
 package com.revature.controllers;
+
 import java.util.List;
 
+import org.apache.tomcat.util.buf.UDecoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.trace.http.HttpTrace.Principal;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,7 +26,7 @@ import com.revature.services.UserService;
 @RestController
 //@Controller
 @RequestMapping("/users")
-@CrossOrigin
+@CrossOrigin(exposedHeaders="Authorization")
 public class UserController {
 	
 	private UserService us;
@@ -43,11 +47,23 @@ public class UserController {
 		
 	}
 	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST, value="/users")
+	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<String> createUser(@RequestBody User user){
 		us.createUser(user);
 		System.out.println("We here!");
-		return new ResponseEntity<>(user.getFirstName() +" " + user.getLastName() + " was created.", HttpStatus.CREATED);
+		return new ResponseEntity<>(HttpStatus.CREATED);
+	}
+	
+	@CrossOrigin
+	@RequestMapping(method=RequestMethod.POST, value="/login")
+	public ResponseEntity<User> loginSystem(@RequestBody User user){
+		User u = us.loginSystem(user.getEmail(), user.getPassword());
+		HttpHeaders responseHeaders = new HttpHeaders();
+		String t = us.tokenSystem(user.getEmail(),user.getPassword());
+		System.out.println(t);
+		responseHeaders.set("Authorization", t);
+		return new ResponseEntity<>(u,responseHeaders,HttpStatus.OK);
+		
 	}
 
 }
