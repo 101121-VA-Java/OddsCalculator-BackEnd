@@ -46,9 +46,9 @@ public class HistoryController {
 	
 	@CrossOrigin
 	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<String> createUser(@RequestBody History history){
+	public ResponseEntity<String> createHistory(@RequestBody History history){
 		hs.createHistory(history);
-		//System.out.println("We here!");
+		System.out.println("We here!");
 		return new ResponseEntity<>(history.getGameID() + " was created.", HttpStatus.CREATED);
 	}
 

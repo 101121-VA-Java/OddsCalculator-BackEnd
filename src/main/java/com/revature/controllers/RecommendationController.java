@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.revature.Daos.HistoryDao;
+import com.revature.models.History;
+import com.revature.services.HistoryService;
 import com.revature.services.RecommendationService;
 
 @RestController
@@ -19,17 +22,25 @@ import com.revature.services.RecommendationService;
 public class RecommendationController {
 	
 	private RecommendationService rs;
-	
+	private HistoryDao hd;
+
 	@Autowired
-	public RecommendationController(RecommendationService rs) {
+	public RecommendationController(RecommendationService rs, HistoryDao hd) {
 		this.rs = rs;
+		this.hd = hd;
 	}
+	
+
+
 	
 	@CrossOrigin
 	@PostMapping("/{id}/{PH}/{DH}")
 	public String getUserRecommendation(@PathVariable(name="id", required = true)int id, @PathVariable(name="PH", required = true)String ph, @PathVariable(name="DH", required = true)String dh){
+		String rec = rs.getRecommendation(ph, dh);
 		
-	return rs.getRecommendation(ph, dh);
+		History h = new History(id, ph, rec, dh);
+		History his = hd.save(h);
+	return rec +":"+ his.getGameID();
 	}
 
 	@CrossOrigin

@@ -43,11 +43,11 @@ private HistoryDao hd;
 		}
 		if(value.equals("10")) {
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Do not split ";
+			rec = "Do not split " + hardRecommendation("20", DH);
 		}
 		if( (value.equals("9") && DH.equals("7")) || (value.equals("9") && DH.equals("10")) || (value.equals("9") && DH.equals("A")) ) { 
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Do not split ";
+			rec = "Do not split " + hardRecommendation("18", DH);
 		} else if(value.equals("9")) { 
 			rec = "Split";
 		}
@@ -56,7 +56,7 @@ private HistoryDao hd;
 		}
 		if( (value.equals("7") && DH.equals("8")) || (value.equals("7") && DH.equals("9")) || (value.equals("7") && DH.equals("10")) || (value.equals("7") && DH.equals("A")) ) { 
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Do not split ";
+			rec = "Do not split " + hardRecommendation("14", DH);
 		} else if(value.equals("7")) { 
 			rec = "Split";
 		}
@@ -67,32 +67,32 @@ private HistoryDao hd;
 			rec = "Split and double bet ";
 		} else if (value.equals("6")) {
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Do not split ";
+			rec = "Do not split " + hardRecommendation(value, DH);
 		}
 		if(value.equals("5")) { 
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Do not split ";
+			rec = "Do not split " + hardRecommendation("10", DH);
 		}
 		if( (value.equals("4") && DH.equals("5")) || (value.equals("4") && DH.equals("6")) ) {
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Split and double ";
+			rec = "Split and double " + hardRecommendation("8", DH);
 		} else if(value.equals("4")) {
 			//becomes a hard total -> needs to be passed into hardRecs
-			rec = "Do not split ";
+			rec = "Do not split " + hardRecommendation("8", DH);
 		}
 		if( (value.equals("3") && DH.equals("2")) || (value.equals("3") && DH.equals("3")) ) {
 			rec = "Split and double ";
 		} else if((value.equals("3") && DH.equals("4")) || (value.equals("3") && DH.equals("5")) || (value.equals("3") && DH.equals("6")) || (value.equals("3") && DH.equals("7")) ) {
-			rec = "Split ";
+			rec = "Split";
 		} else if(value.equals("3")) {
-			rec = "Do not split";
+			rec = "Do not split "  + hardRecommendation("6", DH);
 		}
 		if( (value.equals("2") && DH.equals("2")) || (value.equals("2") && DH.equals("3")) ) {
 			rec = "Split and double ";
 		} else if((value.equals("2") && DH.equals("4")) || (value.equals("2") && DH.equals("5")) || (value.equals("2") && DH.equals("6")) || (value.equals("2") && DH.equals("7")) ) {
 			rec = "Split ";
 		} else if(value.equals("2")) {
-			rec = "Do not split ";
+			rec = "Do not split "  + hardRecommendation("4", DH);
 		}
 		
 		return rec;
