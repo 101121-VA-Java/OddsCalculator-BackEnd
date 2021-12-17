@@ -7,13 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity
-@Table(name="users")
+@Entity(name="users")
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int userID;
+	private int userid;
+	@Column(name = "first_name", nullable=false)
 	private String firstName;
+	@Column(name = "last_name", nullable=false)
 	private String lastName;
 	private String password;
 	private String email;
@@ -45,7 +46,7 @@ public class User {
 	public User(int userID, String firstName, String lastName, String password, String email, Role role, int wins,
 			int losses) {
 		super();
-		this.userID = userID;
+		this.userid = userID;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
@@ -67,7 +68,7 @@ public class User {
 		result = prime * result + losses;
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((role == null) ? 0 : role.hashCode());
-		result = prime * result + userID;
+		result = prime * result + userid;
 		result = prime * result + wins;
 		return result;
 	}
@@ -107,7 +108,7 @@ public class User {
 			return false;
 		if (role != other.role)
 			return false;
-		if (userID != other.userID)
+		if (userid != other.userid)
 			return false;
 		if (wins != other.wins)
 			return false;
@@ -117,13 +118,13 @@ public class User {
 
 
 	public int getUserID() {
-		return userID;
+		return userid;
 	}
 
 
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUserID(int userid) {
+		this.userid = userid;
 	}
 
 
@@ -214,7 +215,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [userID=" + userID + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+		return "User [userID=" + userid + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", role=" + role + ", wins=" + wins + ", losses=" + losses + "]";
 	}
 	

@@ -5,27 +5,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.ForeignKey;
+
 import javax.persistence.Id;
 //import org.springframework.data.annotation.Id;
 
-@Entity
-@Table(name="History")
+@Entity(name="history")
+//@Table
 public class History {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int game_id;
+	//@ForeignKey(name = "player_id")
 	@Column(name = "player_id", nullable=false)
 	private int player_id;
-	@Column(nullable=true)
+	@Column(name = "winner", nullable=true)
 	private boolean winner;
-	@Column(name = "initialodds", nullable=false)
-	private float initialOdds;
+//	@Column(name = "initialodds", nullable=false)
+//	private float initialOdds;
 	@Column(name = "balance", nullable=true)
 	private float balance;
 	@Column(name = "initialhand", nullable=false)
 	private String initialHand;
-	//private String initialDealerCard;
+	@Column(name = "dealerhand", nullable=false)
+	private String initialDealerCard;
 	@Column(name = "recommend", nullable=false)
 	private String recommendation;
 	@Column(name = "followedrec", nullable=true)
@@ -43,28 +48,39 @@ public class History {
 		super();
 		this.player_id = playerID;
 		this.initialHand = initialHand;
-		//this.initialDealerCard = initialDealerCard;
+		this.initialDealerCard = initialDealerCard;
 		this.recommendation = recommendation;
-		this.initialOdds = 0;
 		this.numOfDecks = 6;
 		this.followedrec = false;
 	}
 
 
 
-	public History(int gameID, int playerID, boolean winner, float balance, String initialHand,
+	public History(int gameID, int playerID, boolean winner, float balance, String initialHand, String initialDealerCard,
 			String recommendation, boolean followedRec) {
 		super();
 		this.game_id = gameID;
 		this.player_id = playerID;
 		this.winner = winner;
-		this.initialOdds = 0;
+		this.initialDealerCard = initialDealerCard;
 		this.balance = balance;
 		this.initialHand = initialHand;
 		this.recommendation = recommendation;
 		this.followedrec = followedRec;
 		this.numOfDecks = 6;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "History [game_id=" + game_id + ", player_id=" + player_id + ", winner=" + winner + ", balance="
+				+ balance + ", initialHand=" + initialHand + ", initialDealerCard=" + initialDealerCard
+				+ ", recommendation=" + recommendation + ", followedrec=" + followedrec + ", numOfDecks=" + numOfDecks
+				+ "]";
+	}
+
+
 
 	@Override
 	public int hashCode() {
@@ -73,12 +89,16 @@ public class History {
 		result = prime * result + Float.floatToIntBits(balance);
 		result = prime * result + (followedrec ? 1231 : 1237);
 		result = prime * result + game_id;
+		result = prime * result + ((initialDealerCard == null) ? 0 : initialDealerCard.hashCode());
 		result = prime * result + ((initialHand == null) ? 0 : initialHand.hashCode());
+		result = prime * result + numOfDecks;
 		result = prime * result + player_id;
 		result = prime * result + ((recommendation == null) ? 0 : recommendation.hashCode());
 		result = prime * result + (winner ? 1231 : 1237);
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -95,10 +115,17 @@ public class History {
 			return false;
 		if (game_id != other.game_id)
 			return false;
+		if (initialDealerCard == null) {
+			if (other.initialDealerCard != null)
+				return false;
+		} else if (!initialDealerCard.equals(other.initialDealerCard))
+			return false;
 		if (initialHand == null) {
 			if (other.initialHand != null)
 				return false;
 		} else if (!initialHand.equals(other.initialHand))
+			return false;
+		if (numOfDecks != other.numOfDecks)
 			return false;
 		if (player_id != other.player_id)
 			return false;
@@ -112,12 +139,7 @@ public class History {
 		return true;
 	}
 
-	@Override
-	public String toString() {
-		return "History [gameID=" + game_id + ", playerID=" + player_id + ", winner=" + winner + 
-				", balance=" + balance + ", initialHand=" + initialHand + ", recommendation="
-				+ recommendation + ", followedRec=" + followedrec + "]";
-	}
+
 
 	public int getGameID() {
 		return game_id;
@@ -192,26 +214,26 @@ public class History {
 //	}
 
 
-//	public String getInitialDealerHand() {
-//		return initialDealerCard;
-//	}
-//
-//
-//	public void setInitialDealerHand(String initialDealerCard) {
-//		this.initialDealerCard = initialDealerCard;
-//	}
+	public String getInitialDealerHand() {
+		return initialDealerCard;
+	}
 
 
-
-	public float getInitialOdds() {
-		return initialOdds;
+	public void setInitialDealerHand(String initialDealerCard) {
+		this.initialDealerCard = initialDealerCard;
 	}
 
 
 
-	public void setInitialOdds(float initialOdds) {
-		this.initialOdds = initialOdds;
-	}
+//	public float getInitialOdds() {
+//		return initialOdds;
+//	}
+//
+//
+//
+//	public void setInitialOdds(float initialOdds) {
+//		this.initialOdds = initialOdds;
+//	}
 
 
 
