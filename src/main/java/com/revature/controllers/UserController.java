@@ -54,16 +54,6 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
-	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST, value="/login")
-	public ResponseEntity<User> loginSystem(@RequestBody User user){
-		User u = us.loginSystem(user.getEmail(), user.getPassword());
-		HttpHeaders responseHeaders = new HttpHeaders();
-		String t = us.tokenSystem(user.getEmail(),user.getPassword());
-		System.out.println(t);
-		responseHeaders.set("Authorization", t);
-		return new ResponseEntity<>(u,responseHeaders,HttpStatus.OK);
-		
-	}
+
 
 }
