@@ -1,6 +1,7 @@
 package com.revature.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +31,30 @@ public class HistoryService {
 		
 	}
 	
-	public History getHistory(int id){
-		return hd.getById(id);
+	public Optional<History> getHistory(int id){
+		return hd.findById(id);
+		
+	}
+	
+	public List<History> getHistorybyUser(int Userid){
+		return hd.findByplayer_id(Userid);
+		
+	}
+	
+	public void updateHistory(int id, History h, String field) {
+		if(field.equals("balance")) {
+			hd.updateHistoryBalance(id, h.getBalance());
+		}else if(field.equals("winner")) {
+			hd.updateHistoryWinner(id, h.isWinner());
+		}else if(field.equals("followedrec")) {
+			 hd.updateHistoryFollowedRec(id, h.isFollowedRec());
+		}
+		else if(field.equals("all")) {
+			 hd.updateHistoryFollowedRec(id, h.isFollowedRec());
+			 hd.updateHistoryWinner(id, h.isWinner());
+			 hd.updateHistoryBalance(id, h.getBalance());
+		}
+		
 		
 	}
 	
