@@ -1,6 +1,10 @@
 package com.revature.Daos;
 
+
 import java.util.List;
+
+import javax.transaction.Transactional;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,11 +17,15 @@ import com.revature.models.Role;
 
 @Repository
 public interface UserDao extends JpaRepository<User, Integer>{
+
 	List<User> findUsersByRole(Role role);
 
 	User findUserByEmail(String email);
 	User findUserByuserid(int userid);
 
+	
+
+	
 	@Transactional
 	@Modifying
 	@Query("UPDATE users u SET u.firstName = ?2 WHERE u.userid = ?1")
@@ -33,5 +41,14 @@ public interface UserDao extends JpaRepository<User, Integer>{
 	@Query("UPDATE users u SET u.password = ?2 WHERE u.userid = ?1")
 	void updateUserPassword(int userid, String password);
 	
+	@Transactional
+	@Modifying
+	@Query("UPDATE users u SET u.wins = ?2 WHERE u.userid = ?1")
+	void updateUserWins(int userid, int wins);
 	
+	@Transactional
+	@Modifying
+	@Query("UPDATE users u SET u.losses = ?2 WHERE u.userid = ?1")
+	void updateUserLosses(int userid, int losses);
+
 }

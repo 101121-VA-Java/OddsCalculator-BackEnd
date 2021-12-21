@@ -9,7 +9,11 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.revature.Daos.UserDao;
+
 import com.revature.models.Role;
+
+import com.revature.models.History;
+
 import com.revature.models.User;
 
 @Service
@@ -32,6 +36,7 @@ public class UserService {
 		
 	}
 	
+
         public String tokenSystem(String email, String password) {
 		
 		String token = null;
@@ -77,7 +82,7 @@ public class UserService {
     		
     	}
         public User getUserById(int id) {
-    		return ud.findUserByuserid(id);
+    		return ud.getById(id);
     	}
         public void updateUser(int id, User u) {
     		 
@@ -90,5 +95,4 @@ public class UserService {
     	}
         
        
-
 

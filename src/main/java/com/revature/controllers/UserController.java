@@ -8,7 +8,6 @@ import org.springframework.boot.actuate.trace.http.HttpTrace.Principal;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,15 +39,13 @@ public class UserController {
 
 	@CrossOrigin
 	@GetMapping
-	public List<User> getAllUsers() {
-		// if a query param of name "role" is passed in, returns users of this role
-//		if(role != null) {
-//			return us.getUserByRole(role);
-//		}
+
+	public List<User> getAllUsers(){
 		System.out.println("Getting All Users");
 		return us.getAllUsers();
 
 	}
+
 
 	@CrossOrigin
 	@RequestMapping(method = RequestMethod.POST)
@@ -70,6 +67,10 @@ public class UserController {
 	public ResponseEntity<String> updateUser(@PathVariable(name = "id") int id, @RequestBody User user) {
 		us.updateUser(id, user);
 		return new ResponseEntity<>( HttpStatus.OK);
+
 	}
+	
+
+	
 
 }
