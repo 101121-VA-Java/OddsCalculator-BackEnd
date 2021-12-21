@@ -21,8 +21,8 @@ public class History {
 	//@ForeignKey(name = "player_id")
 	@Column(name = "player_id", nullable=false)
 	private int player_id;
-	@Column(name = "winner", nullable=true)
-	private boolean winner;
+	@Column(name = "outcome", nullable=true)
+	private Outcome outcome;
 //	@Column(name = "initialodds", nullable=false)
 //	private float initialOdds;
 	@Column(name = "balance", nullable=true)
@@ -56,12 +56,12 @@ public class History {
 
 
 
-	public History(int gameID, int playerID, boolean winner, float balance, String initialHand, String initialDealerCard,
+	public History(int gameID, int playerID, Outcome outcome, float balance, String initialHand, String initialDealerCard,
 			String recommendation, boolean followedRec) {
 		super();
 		this.game_id = gameID;
 		this.player_id = playerID;
-		this.winner = winner;
+		this.outcome = outcome;
 		this.initialDealerCard = initialDealerCard;
 		this.balance = balance;
 		this.initialHand = initialHand;
@@ -74,11 +74,15 @@ public class History {
 
 	@Override
 	public String toString() {
-		return "History [game_id=" + game_id + ", player_id=" + player_id + ", winner=" + winner + ", balance="
+		return "History [game_id=" + game_id + ", player_id=" + player_id + ", Outcome=" + outcome + ", balance="
 				+ balance + ", initialHand=" + initialHand + ", initialDealerCard=" + initialDealerCard
 				+ ", recommendation=" + recommendation + ", followedrec=" + followedrec + ", numOfDecks=" + numOfDecks
 				+ "]";
 	}
+
+
+
+
 
 
 
@@ -92,9 +96,9 @@ public class History {
 		result = prime * result + ((initialDealerCard == null) ? 0 : initialDealerCard.hashCode());
 		result = prime * result + ((initialHand == null) ? 0 : initialHand.hashCode());
 		result = prime * result + numOfDecks;
+		result = prime * result + ((outcome == null) ? 0 : outcome.hashCode());
 		result = prime * result + player_id;
 		result = prime * result + ((recommendation == null) ? 0 : recommendation.hashCode());
-		result = prime * result + (winner ? 1231 : 1237);
 		return result;
 	}
 
@@ -127,14 +131,14 @@ public class History {
 			return false;
 		if (numOfDecks != other.numOfDecks)
 			return false;
+		if (outcome != other.outcome)
+			return false;
 		if (player_id != other.player_id)
 			return false;
 		if (recommendation == null) {
 			if (other.recommendation != null)
 				return false;
 		} else if (!recommendation.equals(other.recommendation))
-			return false;
-		if (winner != other.winner)
 			return false;
 		return true;
 	}
@@ -157,13 +161,7 @@ public class History {
 		this.player_id = playerID;
 	}
 
-	public boolean isWinner() {
-		return winner;
-	}
-
-	public void setWinner(boolean winner) {
-		this.winner = winner;
-	}
+	
 
 //	public float getInitialOdds() {
 //		return initialOdds;
@@ -172,6 +170,18 @@ public class History {
 //	public void setInitialOdds(float initialOdds) {
 //		this.initialOdds = initialOdds;
 //	}
+
+	public Outcome getOutcome() {
+		return outcome;
+	}
+
+
+
+	public void setOutcome(Outcome outcome) {
+		this.outcome = outcome;
+	}
+
+
 
 	public float getBalance() {
 		return balance;
