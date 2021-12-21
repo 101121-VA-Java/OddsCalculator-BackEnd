@@ -58,7 +58,7 @@ public class HistoryController {
 	public ResponseEntity<String> createHistory(@RequestBody History history){
 		hs.createHistory(history);
 		System.out.println("We here!");
-		return new ResponseEntity<>(history.getGameID() + " was created.", HttpStatus.CREATED);
+		return new ResponseEntity<>(history.getGameID() + "was created", HttpStatus.CREATED);
 	}
 	
 	@CrossOrigin
