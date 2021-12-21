@@ -23,6 +23,7 @@ public class UserService {
 	
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void createUser(User u) {
+		u.setRole(Role.BASIC);
 		ud.save(u);
 	}
 	
@@ -75,7 +76,19 @@ public class UserService {
     		return false;
     		
     	}
+        public User getUserById(int id) {
+    		return ud.findUserByuserid(id);
+    	}
+        public void updateUser(int id, User u) {
+    		 
+    			ud.updateUserFirstName(id, u.getFirstName());
+    			ud.updateUserLastName(id, u.getLastName());
+    			ud.updateUserPassword(id, u.getPassword());
+    		
+    			 
+    		}
+    	}
         
        
 
-}
+

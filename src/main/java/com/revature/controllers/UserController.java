@@ -11,7 +11,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,34 +28,48 @@ import com.revature.services.UserService;
 @RestController
 //@Controller
 @RequestMapping("/users")
-@CrossOrigin(exposedHeaders="Authorization")
+@CrossOrigin(exposedHeaders = "Authorization")
 public class UserController {
-	
+
 	private UserService us;
-	
+
 	@Autowired
 	public UserController(UserService us) {
 		this.us = us;
 	}
+
 	@CrossOrigin
 	@GetMapping
-	public List<User> getAllUsers(){
+	public List<User> getAllUsers() {
 		// if a query param of name "role" is passed in, returns users of this role
 //		if(role != null) {
 //			return us.getUserByRole(role);
 //		}
 		System.out.println("Getting All Users");
 		return us.getAllUsers();
-		
+
 	}
+
 	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<String> createUser(@RequestBody User user){
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<String> createUser(@RequestBody User user) {
 		us.createUser(user);
 		System.out.println("We here!");
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
-	
 
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/{id}")
+	public ResponseEntity<User> getUserById(@PathVariable int id) {
+		System.out.println("Hitting Get user by ID");
+		return new ResponseEntity<>(us.getUserById(id), HttpStatus.OK);
+	}
+
+	@CrossOrigin
+	@PutMapping("/{id}")
+	public ResponseEntity<String> updateUser(@PathVariable(name = "id") int id, @RequestBody User user) {
+		us.updateUser(id, user);
+		return new ResponseEntity<>( HttpStatus.OK);
+	}
 
 }

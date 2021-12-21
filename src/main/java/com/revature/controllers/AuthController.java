@@ -33,4 +33,5 @@ public class AuthController {
 		responseHeaders.set("Authorization", t);
 		return new ResponseEntity<>(u,responseHeaders,HttpStatus.OK);
 }
+	
 }
