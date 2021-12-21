@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,9 +59,9 @@ public class UserController {
 	}
 	
 	@CrossOrigin
-	@PostMapping("/{id}/{field}")
-	public ResponseEntity<String> updateUser(@PathVariable(name="id", required = true)int id, @PathVariable(name="field", required=true) String field,@RequestBody User user){
-		us.updateUser(id, user, field);
+	@PutMapping("/{id}")
+	public ResponseEntity<String> updateUser(@PathVariable(name="id", required = true)int id,@RequestBody User user){
+		us.updateUser(id, user);
 		return new ResponseEntity<>(user.getFirstName() +" " + user.getLastName() + " was updated.", HttpStatus.OK);
 	}
 	

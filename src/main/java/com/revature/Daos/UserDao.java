@@ -12,6 +12,8 @@ import com.revature.models.User;
 @Repository
 public interface UserDao extends JpaRepository<User, Integer>{
 	
+
+	
 	@Transactional
 	@Modifying
 	@Query("UPDATE users u SET u.firstName = ?2 WHERE u.userid = ?1")
