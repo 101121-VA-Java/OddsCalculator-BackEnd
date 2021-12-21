@@ -1,7 +1,11 @@
 package com.revature.controllers;
+
 import java.util.List;
 
+import org.apache.tomcat.util.buf.UDecoder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.trace.http.HttpTrace.Principal;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,47 +27,50 @@ import com.revature.services.UserService;
 @RestController
 //@Controller
 @RequestMapping("/users")
-@CrossOrigin
+@CrossOrigin(exposedHeaders = "Authorization")
 public class UserController {
-	
+
 	private UserService us;
-	
+
 	@Autowired
 	public UserController(UserService us) {
 		this.us = us;
 	}
+
 	@CrossOrigin
 	@GetMapping
-	public List<User> getAllUsers(){
 
+	public List<User> getAllUsers(){
 		System.out.println("Getting All Users");
 		return us.getAllUsers();
-		
+
 	}
-	
+
+
 	@CrossOrigin
-	//@RequestMapping(method=RequestMethod.GET)
-	@GetMapping("/{id}")
-	public User getUsers(@PathVariable(name="id", required = true)int id){
-		
-		System.out.println("Getting User " + id);
-		return us.getUser(id);
-		
-	}
-	
-	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST)
-	public ResponseEntity<String> createUser(@RequestBody User user){
+	@RequestMapping(method = RequestMethod.POST)
+	public ResponseEntity<String> createUser(@RequestBody User user) {
 		us.createUser(user);
-		return new ResponseEntity<>(user.getFirstName() +" " + user.getLastName() + " was created.", HttpStatus.CREATED);
+		System.out.println("We here!");
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
-	
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@GetMapping("/{id}")
+	public ResponseEntity<User> getUserById(@PathVariable int id) {
+		System.out.println("Hitting Get user by ID");
+		return new ResponseEntity<>(us.getUserById(id), HttpStatus.OK);
+	}
+
 	@CrossOrigin
 	@PutMapping("/{id}")
-	public ResponseEntity<String> updateUser(@PathVariable(name="id", required = true)int id,@RequestBody User user){
+	public ResponseEntity<String> updateUser(@PathVariable(name = "id") int id, @RequestBody User user) {
 		us.updateUser(id, user);
-		return new ResponseEntity<>(user.getFirstName() +" " + user.getLastName() + " was updated.", HttpStatus.OK);
+		return new ResponseEntity<>( HttpStatus.OK);
+
 	}
+	
+
 	
 
 }
