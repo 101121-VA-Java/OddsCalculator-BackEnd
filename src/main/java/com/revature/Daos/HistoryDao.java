@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.revature.models.History;
+import com.revature.models.Outcome;
 
 
 @Repository
@@ -25,8 +26,8 @@ public interface HistoryDao extends JpaRepository<History, Integer>{
 	
 	@Transactional
 	@Modifying
-	@Query("UPDATE history h SET h.winner = ?2 WHERE h.game_id = ?1")
-	void updateHistoryWinner(int gameID, boolean winner);
+	@Query("UPDATE history h SET h.outcome = ?2 WHERE h.game_id = ?1")
+	void updateHistoryOutcome(int gameID, Outcome outcome);
 	
 	@Transactional
 	@Modifying

@@ -44,14 +44,14 @@ public class HistoryService {
 	public void updateHistory(int id, History h, String field) {
 		if(field.equals("balance")) {
 			hd.updateHistoryBalance(id, h.getBalance());
-		}else if(field.equals("winner")) {
-			hd.updateHistoryWinner(id, h.isWinner());
+		}else if(field.equals("outcome")) {
+			hd.updateHistoryOutcome(id, h.getOutcome());
 		}else if(field.equals("followedrec")) {
 			 hd.updateHistoryFollowedRec(id, h.isFollowedRec());
 		}
 		else if(field.equals("all")) {
 			 hd.updateHistoryFollowedRec(id, h.isFollowedRec());
-			 hd.updateHistoryWinner(id, h.isWinner());
+			 hd.updateHistoryOutcome(id, h.getOutcome());
 			 hd.updateHistoryBalance(id, h.getBalance());
 		}
 		

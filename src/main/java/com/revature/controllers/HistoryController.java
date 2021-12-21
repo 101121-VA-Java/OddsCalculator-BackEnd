@@ -79,7 +79,7 @@ public class HistoryController {
 	@CrossOrigin
 	@RequestMapping(method=RequestMethod.POST, value="/won/{id}")
 	public ResponseEntity<String> updateHistoryrecwon(@PathVariable(name="id", required = true)int id, @RequestBody History history){
-		hs.updateHistory(id, history, "winner");
+		hs.updateHistory(id, history, "outcome");
 		System.out.println("We here!");
 		return new ResponseEntity<>(history.getGameID() + " was updated.", HttpStatus.OK);
 	}
