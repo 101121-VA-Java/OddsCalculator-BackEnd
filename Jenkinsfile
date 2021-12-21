@@ -4,8 +4,8 @@ pipeline {
     environment {
         PORT_HOST="8081"
         PORT_CONT="8080"
-        IMAGE_TAG="oddsCalculator"
-        CONTAINER_NAME="oddsCalculator"
+        IMAGE_TAG="oddscalculator"
+        CONTAINER_NAME="oddscalculator"
         DB_URL='jdbc:postgresql://oddscalc.cv2qlth3lytm.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public'
         DB_USER='scrumbob'
         DB_PASS='devpants'
