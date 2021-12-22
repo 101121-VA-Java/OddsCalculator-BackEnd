@@ -7,10 +7,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.context.annotation.Primary;
+
 @Entity(name="users")
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int userid;
 	@Column(name = "first_name", nullable=false)
 	private String firstName;
@@ -23,7 +26,7 @@ public class User {
 	private int wins;
 	@Column(nullable=true)
 	private int losses;
-	
+
 	
 
 	public User() {

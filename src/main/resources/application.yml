@@ -1,11 +1,11 @@
 #server:
 #  port: 8080
-#
-#spring:
-##  datasource:
-##    url: jdbc:postgresql://oddscalc.cv2qlth3lytm.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public #can hardcode credentials, but better practice to use environment variables to not expose creds
-##    username: Scrumbob
-##    password: Devpants
+
+spring:
+#  datasource:
+#    url: jdbc:postgresql://oddscalc.cv2qlth3lytm.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public #can hardcode credentials, but better practice to use environment variables to not expose creds
+#    username: Scrumbob
+#    password: Devpants
 #  datasource:
 #    url: ${db_url} #can hardcode credentials, but better practice to use environment variables to not expose creds
 #    username: ${db_user}
@@ -20,8 +20,8 @@
 # # h2:
 #  #  console:
 #   #   enabled: true
-spring:
-
+#spring:
+#
 #   datasource:
 #     url: jdbc:postgresql://oddscalc.cv2qlth3lytm.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public #can hardcode credentials, but better practice to use environment variables to not expose creds
 #     username: Scrumbob
