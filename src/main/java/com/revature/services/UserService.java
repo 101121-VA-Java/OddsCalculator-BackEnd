@@ -82,7 +82,7 @@ public class UserService {
     		
     	}
         public User getUserById(int id) {
-    		return ud.getById(id);
+    		return ud.findUserByuserid(id);
     	}
         public void updateUser(int id, User u) {
     		 
