@@ -31,12 +31,9 @@ public class User {
 	private int wins;
 	@Column(nullable=true)
 	private int losses;
-<<<<<<< HEAD
-	@Column(nullable=false)
+  @Column(nullable=false)
 	private int balance;
-=======
 
->>>>>>> 8404df48d4462c6411c69dd70bbe58ae7d34ccb4
 	
 
 	public User() {
