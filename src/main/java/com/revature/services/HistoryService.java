@@ -40,21 +40,21 @@ public class HistoryService {
 				int tempbal = h.getBet(); 
 				h.setUserbalance(user.getBalance() + tempbal);
 
-//				h.setUserbalance(h.getUserbalance()+user.getBalance());
+				h.setUserbalance(h.getUserbalance()+user.getBalance());
 				ud.updateUserBalance(h.getPlayerID(), h.getUserbalance());
 				
 		}else if(h.getOutcome().equals(Outcome.LOSE)) {
 			System.out.println("You snooze you lose");
 			int losses = ud.getById(h.getPlayerID()).getLosses() +1;
 			ud.updateUserLosses(h.getPlayerID(), losses);
-			h.setUserbalance(user.getBalance()-h.getBet());
+//			h.setUserbalance(user.getBalance()-h.getBet());
 //			User user = ud.findUserByuserid(h.getPlayerID());
 //			h.setUserbalance(user.getBalance() - h.getUserbalance());
 			
 			ud.updateUserBalance(h.getPlayerID(), h.getUserbalance());
 		}
 		else if(h.getOutcome().equals(Outcome.TIE)) {
-			h.setUserbalance(user.getBalance());
+//			h.setUserbalance(user.getBalance());
 			
 	}
 	}

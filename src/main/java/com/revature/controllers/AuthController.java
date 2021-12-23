@@ -26,9 +26,11 @@ public class AuthController {
 	@CrossOrigin
 	@PostMapping
 	public ResponseEntity<User> loginSystem(@RequestParam(name="email")String email, @RequestParam(name="password")String password){
+		
 		User u = us.loginSystem(email, password);
 		HttpHeaders responseHeaders = new HttpHeaders();
 		String t = us.tokenSystem(email,password);
+		
 		System.out.println(t);
 		responseHeaders.set("Authorization", t);
 		return new ResponseEntity<>(u,responseHeaders,HttpStatus.OK);
