@@ -21,14 +21,6 @@ pipeline {
 
           }
       }
-      stages {
-        stage('Build') {
-            steps {
-                sh 'make' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
-            }
-        }
-    }
       stage('clean') {
          steps {
             sh 'mvn clean'
@@ -41,23 +33,23 @@ pipeline {
       }
       stage('remove previous image if exists') {
             steps {
-                sh 'docker rmi -f ${IMAGE_TAG} || true'
+                sh 'docker rmi -f oddscalculator || true'
             }
         }
 
        stage('create image') {
             steps {
-                sh 'docker build -t ${IMAGE_TAG} -f Dockerfile .'
+                sh 'docker build -t oddscalculator -f Dockerfile .'
             }
         }
         stage('remove previous container if exists') {
             steps {
-                sh 'docker stop ${CONTAINER_NAME} || true'
+                sh 'docker stop oddscalculator || true'
             }
         }
         stage('create container') {
             steps {
-                sh 'docker run -e DB_URL=${DB_URL} -e DB_USER=${DB_USER} -e DB_PASS=${DB_PASS} -d --rm -p ${PORT_HOST}:${PORT_CONT} --name ${CONTAINER_NAME} ${IMAGE_TAG} '
+                sh 'docker run -e DB_URL=${DB_URL} -e DB_USER=${DB_USER} -e DB_PASS=${DB_PASS} -d --rm -p ${PORT_HOST}:${PORT_CONT} --name oddscalculator oddscalculator '
             }
         }
     }

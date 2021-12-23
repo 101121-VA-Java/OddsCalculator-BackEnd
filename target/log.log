@@ -1,55 +1,17 @@
-2021-12-22 12:19:27.187  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 21828 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:19:27.195 DEBUG 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:19:27.196  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : The following profiles are active: @profileActive@
-2021-12-22 12:19:32.702  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 5.947 seconds (JVM running for 7.277)
-2021-12-22 12:19:54.595  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 21828 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:19:54.595 DEBUG 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:19:54.595  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : The following profiles are active: @profileActive@
-2021-12-22 12:19:56.143  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 1.605 seconds (JVM running for 30.718)
-2021-12-22 12:19:57.550  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 21828 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:19:57.550 DEBUG 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:19:57.550  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : The following profiles are active: @profileActive@
-2021-12-22 12:19:58.878  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 1.37 seconds (JVM running for 33.452)
-2021-12-22 12:24:43.817  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 21828 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:24:43.817 DEBUG 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:24:43.818  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : The following profiles are active: @profileActive@
-2021-12-22 12:24:45.237  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 1.468 seconds (JVM running for 319.81)
-2021-12-22 12:35:48.925  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 21828 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:35:48.926 DEBUG 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:35:48.926  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:35:50.585  INFO 21828 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 1.708 seconds (JVM running for 985.157)
-2021-12-22 12:39:29.204  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:39:29.207 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:39:29.207  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:39:34.875  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 6.166 seconds (JVM running for 7.375)
-2021-12-22 12:45:12.414  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:45:12.414 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:45:12.414  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:45:14.366  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 2.017 seconds (JVM running for 346.864)
-2021-12-22 12:45:41.668  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:45:41.668 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:45:41.668  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:45:43.760  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 2.166 seconds (JVM running for 376.258)
-2021-12-22 12:47:16.987  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:47:16.987 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:47:16.987  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:48:09.934  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:48:09.934 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:48:09.934  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:48:13.587  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 3.707 seconds (JVM running for 526.085)
-2021-12-22 12:58:55.871  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 12:58:55.871 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 12:58:55.872  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 12:58:58.688  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 2.871 seconds (JVM running for 1171.184)
-2021-12-22 13:02:41.664  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 13:02:41.664 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 13:02:41.665  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 13:02:44.427  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 2.82 seconds (JVM running for 1396.924)
-2021-12-22 13:03:24.527  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 13:03:24.528 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 13:03:24.528  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 13:03:27.464  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 2.998 seconds (JVM running for 1439.96)
-2021-12-22 14:45:04.364  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 19512 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
-2021-12-22 14:45:04.364 DEBUG 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
-2021-12-22 14:45:04.365  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
-2021-12-22 14:45:07.717  INFO 19512 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 3.496 seconds (JVM running for 7540.213)
+2021-12-23 10:16:25.245  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 24056 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
+2021-12-23 10:16:25.254 DEBUG 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-12-23 10:16:25.255  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-12-23 10:16:29.483  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 4.341 seconds (JVM running for 65052.988)
+2021-12-23 10:16:32.410  INFO 23892 --- [main] c.r.o.OddsCalculatorApplicationTests     : Starting OddsCalculatorApplicationTests using Java 1.8.0_301 on DESKTOP-1ANNOJU with PID 23892 (started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
+2021-12-23 10:16:32.410 DEBUG 23892 --- [main] c.r.o.OddsCalculatorApplicationTests     : Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-12-23 10:16:32.414  INFO 23892 --- [main] c.r.o.OddsCalculatorApplicationTests     : No active profile set, falling back to default profiles: default
+2021-12-23 10:18:12.205  INFO 32236 --- [main] c.r.o.OddsCalculatorApplicationTests     : Starting OddsCalculatorApplicationTests using Java 1.8.0_301 on DESKTOP-1ANNOJU with PID 32236 (started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
+2021-12-23 10:18:12.206 DEBUG 32236 --- [main] c.r.o.OddsCalculatorApplicationTests     : Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-12-23 10:18:12.210  INFO 32236 --- [main] c.r.o.OddsCalculatorApplicationTests     : No active profile set, falling back to default profiles: default
+2021-12-23 10:20:20.388  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 24056 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
+2021-12-23 10:20:20.388 DEBUG 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-12-23 10:20:20.389  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
+2021-12-23 10:20:22.935  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 2.594 seconds (JVM running for 65286.441)
+2021-12-23 10:21:39.149  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 15.0.1 on DESKTOP-1ANNOJU with PID 24056 (C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd\target\classes started by 16038 in C:\Users\16038\Documents\GitHub\Scrumbob-BackEnd)
+2021-12-23 10:21:39.150 DEBUG 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
+2021-12-23 10:21:39.150  INFO 24056 --- [restartedMain] com.revature.OddsCalculatorApplication   : No active profile set, falling back to default profiles: default
