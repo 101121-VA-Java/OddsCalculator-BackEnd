@@ -64,9 +64,9 @@ public class HistoryController {
 	}
 	
 	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST, value="/balance/{id}")
+	@RequestMapping(method=RequestMethod.POST, value="/userbalance/{id}")
 	public ResponseEntity<String> updateHistorybalance(@PathVariable(name="id", required = true)int id, @RequestBody History history){
-		hs.updateHistory(id, history, "balance");
+		hs.updateHistory(id, history, "userbalance");
 		System.out.println("We here!");
 		return new ResponseEntity<>(history.getGameID() + " was updated.", HttpStatus.OK);
 	}

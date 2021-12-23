@@ -28,16 +28,36 @@ public class HistoryService {
 	
 	@Transactional(propagation=Propagation.REQUIRED)
 	public void createHistory(History h) {
+		System.out.println("I hope it isnt hitting this..");
 		hd.save(h);
+		User user = ud.findUserByuserid(h.getPlayerID());
+		System.out.println(h.getUserbalance());
+		System.out.println(user.getBalance());
 		if(h.getOutcome().equals(Outcome.WIN)) {
 			int wins = ud.getById(h.getPlayerID()).getWins() +1;
 			ud.updateUserWins(h.getPlayerID(), wins);
+			 System.out.println("Winning!");
+				int tempbal = h.getBet(); 
+				h.setUserbalance(user.getBalance() + tempbal);
+
+//				h.setUserbalance(h.getUserbalance()+user.getBalance());
+				ud.updateUserBalance(h.getPlayerID(), h.getUserbalance());
+				
 		}else if(h.getOutcome().equals(Outcome.LOSE)) {
+			System.out.println("You snooze you lose");
 			int losses = ud.getById(h.getPlayerID()).getLosses() +1;
 			ud.updateUserLosses(h.getPlayerID(), losses);
+			h.setUserbalance(user.getBalance()-h.getBet());
+//			User user = ud.findUserByuserid(h.getPlayerID());
+//			h.setUserbalance(user.getBalance() - h.getUserbalance());
+			
+			ud.updateUserBalance(h.getPlayerID(), h.getUserbalance());
 		}
+		else if(h.getOutcome().equals(Outcome.TIE)) {
+			h.setUserbalance(user.getBalance());
+			
 	}
-	
+	}
 	public List<History> getAllHistory(){
 		return hd.findAll();
 		
@@ -54,8 +74,17 @@ public class HistoryService {
 	}
 	
 	public void updateHistory(int id, History h, String field) {
-		if(field.equals("balance")) {
-			hd.updateHistoryBalance(id, h.getBalance());
+		if(field.equals("userbalance")) {
+			System.out.println("test Balance");
+			if(h.getOutcome() == Outcome.WIN) {
+				int tempbal = h.getBet() + h.getBet();
+				h.setUserbalance(h.getUserbalance() + tempbal);
+				
+			}
+			if(h.getOutcome() == Outcome.LOSE) {
+				h.setUserbalance(h.getUserbalance()-h.getBet());
+			}
+			hd.updateHistoryUserbalance(id, h.getUserbalance());
 		}else if(field.equals("outcome")) {
 			hd.updateHistoryOutcome(id, h.getOutcome());
 			if(h.getOutcome().equals(Outcome.WIN)) {
@@ -69,6 +98,7 @@ public class HistoryService {
 			 hd.updateHistoryFollowedRec(id, h.isFollowedRec());
 		}
 		else if(field.equals("all")) {
+			System.out.println("It hits all");
 			 hd.updateHistoryFollowedRec(id, h.isFollowedRec());
 			 hd.updateHistoryOutcome(id, h.getOutcome());
 			 if(h.getOutcome().equals(Outcome.WIN)) {
@@ -78,7 +108,16 @@ public class HistoryService {
 					int losses = ud.getById(h.getPlayerID()).getLosses() +1;
 					ud.updateUserLosses(h.getPlayerID(), losses);
 				}
-			 hd.updateHistoryBalance(id, h.getBalance());
+			 if(h.getOutcome().equals(Outcome.WIN)) {
+				 System.out.println("Winning!");
+					int tempbal = h.getBet() + h.getBet();
+					h.setUserbalance(h.getUserbalance() + tempbal);
+					
+				}
+				if(h.getOutcome().equals(Outcome.LOSE)) {
+					h.setUserbalance(h.getUserbalance()-h.getBet());
+				}
+			 hd.updateHistoryUserbalance(id, h.getUserbalance());
 		}
 		
 		

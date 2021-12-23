@@ -21,8 +21,8 @@ public interface HistoryDao extends JpaRepository<History, Integer>{
 	
 	@Transactional
 	@Modifying
-	@Query("UPDATE history h SET h.balance = ?2 WHERE h.game_id = ?1")
-	void updateHistoryBalance(int gameID, float balance);
+	@Query("UPDATE history h SET h.userbalance = ?2 WHERE h.game_id = ?1")
+	void updateHistoryUserbalance(int gameID, int userbalance);
 	
 	@Transactional
 	@Modifying
