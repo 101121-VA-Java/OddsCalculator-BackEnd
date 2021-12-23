@@ -7,13 +7,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.springframework.context.annotation.Primary;
+
 
 @Entity(name="users")
 @JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	private int userid;
 	@Column(name = "first_name", nullable=false)
 	private String firstName;
@@ -26,8 +31,12 @@ public class User {
 	private int wins;
 	@Column(nullable=true)
 	private int losses;
+<<<<<<< HEAD
 	@Column(nullable=false)
 	private int balance;
+=======
+
+>>>>>>> 8404df48d4462c6411c69dd70bbe58ae7d34ccb4
 	
 
 	public User() {
