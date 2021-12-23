@@ -17,7 +17,7 @@ pipeline {
             script {
                 properties([pipelineTriggers([githubPush()])])
             }
-            git branch: 'main', url: 'https://github.com/101121-VA-Java/OddsCalculator-BackEnd.git'
+            git branch: 'testbranch', url: 'https://github.com/101121-VA-Java/OddsCalculator-BackEnd.git'
 
           }
       }
