@@ -22,6 +22,7 @@ public interface UserDao extends JpaRepository<User, Integer>{
 
 	User findUserByEmail(String email);
 	User findUserByuserid(int userid);
+	
 
 	
 
@@ -51,4 +52,8 @@ public interface UserDao extends JpaRepository<User, Integer>{
 	@Query("UPDATE users u SET u.losses = ?2 WHERE u.userid = ?1")
 	void updateUserLosses(int userid, int losses);
 
+	@Transactional
+	@Modifying
+	@Query("UPDATE users u SET u.balance = ?2 WHERE u.userid = ?1")
+	void updateUserBalance(int userid, int balance);
 }

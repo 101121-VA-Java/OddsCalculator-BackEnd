@@ -25,8 +25,8 @@ public class History {
 	private Outcome outcome;
 //	@Column(name = "initialodds", nullable=false)
 //	private float initialOdds;
-	@Column(name = "balance", nullable=true)
-	private float balance;
+	@Column(name = "userbalance", nullable=true)
+	private int userbalance;
 	@Column(name = "initialhand", nullable=false)
 	private String initialHand;
 	@Column(name = "dealerhand", nullable=false)
@@ -37,6 +37,8 @@ public class History {
 	private boolean followedrec;
 	@Column(name = "numofdecks", nullable=false)
 	private int numOfDecks;
+	@Column(name="bet", nullable=true)
+	private int bet;
 
 	public History() {
 		// TODO Auto-generated constructor stub
@@ -56,33 +58,38 @@ public class History {
 
 
 
-	public History(int gameID, int playerID, Outcome outcome, float balance, String initialHand, String initialDealerCard,
-			String recommendation, boolean followedRec) {
+	public History(int gameID, int playerID, Outcome outcome, int userbalance, String initialHand, String initialDealerCard,
+			String recommendation, boolean followedRec, int bet) {
 		super();
 		this.game_id = gameID;
 		this.player_id = playerID;
 		this.outcome = outcome;
 		this.initialDealerCard = initialDealerCard;
-		this.balance = balance;
+		this.userbalance = userbalance;
 		this.initialHand = initialHand;
 		this.recommendation = recommendation;
 		this.followedrec = followedRec;
 		this.numOfDecks = 6;
+		this.bet= bet;
 	}
+
+
+
+	
+
+
+
+
 
 
 
 	@Override
 	public String toString() {
-		return "History [game_id=" + game_id + ", player_id=" + player_id + ", Outcome=" + outcome + ", balance="
-				+ balance + ", initialHand=" + initialHand + ", initialDealerCard=" + initialDealerCard
+		return "History [game_id=" + game_id + ", player_id=" + player_id + ", outcome=" + outcome + ", userbalance="
+				+ userbalance + ", initialHand=" + initialHand + ", initialDealerCard=" + initialDealerCard
 				+ ", recommendation=" + recommendation + ", followedrec=" + followedrec + ", numOfDecks=" + numOfDecks
-				+ "]";
+				+ ", bet=" + bet + "]";
 	}
-
-
-
-
 
 
 
@@ -90,7 +97,7 @@ public class History {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + Float.floatToIntBits(balance);
+		result = prime * result + Float.floatToIntBits(userbalance);
 		result = prime * result + (followedrec ? 1231 : 1237);
 		result = prime * result + game_id;
 		result = prime * result + ((initialDealerCard == null) ? 0 : initialDealerCard.hashCode());
@@ -113,7 +120,7 @@ public class History {
 		if (getClass() != obj.getClass())
 			return false;
 		History other = (History) obj;
-		if (Float.floatToIntBits(balance) != Float.floatToIntBits(other.balance))
+		if (Float.floatToIntBits(userbalance) != Float.floatToIntBits(other.userbalance))
 			return false;
 		if (followedrec != other.followedrec)
 			return false;
@@ -183,12 +190,12 @@ public class History {
 
 
 
-	public float getBalance() {
-		return balance;
+	public int getUserbalance() {
+		return userbalance;
 	}
 
-	public void setBalance(float balance) {
-		this.balance = balance;
+	public void setUserbalance(int userbalance) {
+		this.userbalance = userbalance;
 	}
 
 	public String getInitialHand() {
@@ -255,6 +262,18 @@ public class History {
 
 	public void setNumOfDecks(int numOfDecks) {
 		this.numOfDecks = numOfDecks;
+	}
+
+
+
+	public int getBet() {
+		return bet;
+	}
+
+
+
+	public void setBet(int bet) {
+		this.bet = bet;
 	}
 	
 	

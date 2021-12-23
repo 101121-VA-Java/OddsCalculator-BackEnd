@@ -20,6 +20,8 @@ spring:
 # # h2:
 #  #  console:
 #   #   enabled: true
+
+
 #spring:
 #
 #   datasource:
@@ -31,23 +33,24 @@ spring:
 #     database-platform: org.hibernate.dialect.PostgreSQLDialect
 #     hibernate:
 #       ddl-auto: none
-  
-  
- # h2:
-  #  console:
-   #   enabled: true
 
-  jackson:
-    serialization:
+  
+  
+h2:
+    console:
+      enabled: true
+
+jackson:
+   serialization:
       fail-on-empty-beans: false
-  profiles:
+profiles:
     active:
     - "@profileActive@"
-
-# Actuator setting to display more metrics about the application
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+#
+## Actuator setting to display more metrics about the application
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
 

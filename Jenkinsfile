@@ -21,14 +21,7 @@ pipeline {
 
           }
       }
-      stages {
-        stage('Build') {
-            steps {
-                sh 'make' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
-            }
-        }
-    }
+
       stage('clean') {
          steps {
             sh 'mvn clean'
