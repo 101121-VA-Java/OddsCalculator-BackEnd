@@ -32,16 +32,10 @@ public class User {
 	private int wins;
 	@Column(nullable=true)
 	private int losses;
-<<<<<<< HEAD
-	@Column(nullable=false)
-	private int balance;
-
-
-=======
-
   @Column(nullable=false)
 	private int balance;
->>>>>>> ba65b3663afa42bfe9b1faffdbb3d340c7e53eb8
+  @Column(nullable=false)
+	private int balance;
 
 	
 
