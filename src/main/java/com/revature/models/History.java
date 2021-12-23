@@ -37,6 +37,8 @@ public class History {
 	private boolean followedrec;
 	@Column(name = "numofdecks", nullable=false)
 	private int numOfDecks;
+	@Column(name="bet", nullable=true)
+	private int bet;
 
 	public History() {
 		// TODO Auto-generated constructor stub
@@ -57,7 +59,7 @@ public class History {
 
 
 	public History(int gameID, int playerID, Outcome outcome, float balance, String initialHand, String initialDealerCard,
-			String recommendation, boolean followedRec) {
+			String recommendation, boolean followedRec, int bet) {
 		super();
 		this.game_id = gameID;
 		this.player_id = playerID;
@@ -68,21 +70,26 @@ public class History {
 		this.recommendation = recommendation;
 		this.followedrec = followedRec;
 		this.numOfDecks = 6;
+		this.bet= bet;
 	}
+
+
+
+	
+
+
+
+
 
 
 
 	@Override
 	public String toString() {
-		return "History [game_id=" + game_id + ", player_id=" + player_id + ", Outcome=" + outcome + ", balance="
+		return "History [game_id=" + game_id + ", player_id=" + player_id + ", outcome=" + outcome + ", balance="
 				+ balance + ", initialHand=" + initialHand + ", initialDealerCard=" + initialDealerCard
 				+ ", recommendation=" + recommendation + ", followedrec=" + followedrec + ", numOfDecks=" + numOfDecks
-				+ "]";
+				+ ", bet=" + bet + "]";
 	}
-
-
-
-
 
 
 
@@ -255,6 +262,18 @@ public class History {
 
 	public void setNumOfDecks(int numOfDecks) {
 		this.numOfDecks = numOfDecks;
+	}
+
+
+
+	public int getBet() {
+		return bet;
+	}
+
+
+
+	public void setBet(int bet) {
+		this.bet = bet;
 	}
 	
 	

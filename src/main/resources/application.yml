@@ -22,32 +22,32 @@
 #   #   enabled: true
 spring:
 
-#   datasource:
-#     url: jdbc:postgresql://oddscalc.cv2qlth3lytm.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public #can hardcode credentials, but better practice to use environment variables to not expose creds
-#     username: Scrumbob
-#     password: Devpants
-#   jpa:
-#     show-sql: true
-#     database-platform: org.hibernate.dialect.PostgreSQLDialect
-#     hibernate:
-#       ddl-auto: none
+   datasource:
+     url: jdbc:postgresql://oddscalc.cv2qlth3lytm.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=public  #can hardcode credentials, but better practice to use environment variables to not expose creds
+     username: Scrumbob
+     password: Devpants
+   jpa:
+     show-sql: true
+     database-platform: org.hibernate.dialect.PostgreSQLDialect
+     hibernate:
+       ddl-auto: none
   
   
- # h2:
-  #  console:
-   #   enabled: true
+h2:
+    console:
+      enabled: true
 
-  jackson:
-    serialization:
+jackson:
+   serialization:
       fail-on-empty-beans: false
-  profiles:
+profiles:
     active:
     - "@profileActive@"
-
-# Actuator setting to display more metrics about the application
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
+#
+## Actuator setting to display more metrics about the application
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
 
