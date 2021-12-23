@@ -8,9 +8,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import org.springframework.context.annotation.Primary;
+
 
 
 @Entity(name="users")
@@ -18,7 +20,6 @@ import org.springframework.context.annotation.Primary;
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-
 	private int userid;
 	@Column(name = "first_name", nullable=false)
 	private String firstName;
@@ -31,10 +32,16 @@ public class User {
 	private int wins;
 	@Column(nullable=true)
 	private int losses;
+<<<<<<< HEAD
 	@Column(nullable=false)
 	private int balance;
 
 
+=======
+
+  @Column(nullable=false)
+	private int balance;
+>>>>>>> ba65b3663afa42bfe9b1faffdbb3d340c7e53eb8
 
 	
 
