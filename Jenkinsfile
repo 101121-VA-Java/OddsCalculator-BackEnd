@@ -52,5 +52,17 @@ pipeline {
                 sh 'docker run -e DB_URL=${DB_URL} -e DB_USER=${DB_USER} -e DB_PASS=${DB_PASS} -d --rm -p ${PORT_HOST}:${PORT_CONT} --name oddscalculator oddscalculator '
             }
         }
+      stage('Deploy') {
+            steps {
+                
+
+                script {
+                    def browsers = ['chrome', 'firefox']
+                    for (int i = 0; i < browsers.size(); i++) {
+                        echo "Testing the ${browsers[i]} browser"
+                    }
+                }
+            }
+        }
     }
 }
