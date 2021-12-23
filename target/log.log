@@ -159,3 +159,4 @@
 2021-12-23 16:42:06.774  INFO 13276 --- [restartedMain] com.revature.OddsCalculatorApplication   : Starting OddsCalculatorApplication using Java 16.0.1 on DESKTOP-LHLTV3E with PID 13276 (C:\Users\wysoc\Documents\Gitbash\OddsCalculator-BackEnd\target\classes started by wysoc in C:\Users\wysoc\Documents\Gitbash\OddsCalculator-BackEnd)
 2021-12-23 16:42:06.774 DEBUG 13276 --- [restartedMain] com.revature.OddsCalculatorApplication   : Running with Spring Boot v2.5.6, Spring v5.3.12
 2021-12-23 16:42:06.774  INFO 13276 --- [restartedMain] com.revature.OddsCalculatorApplication   : The following profiles are active: @profileActive@
+2021-12-23 16:42:07.640  INFO 13276 --- [restartedMain] com.revature.OddsCalculatorApplication   : Started OddsCalculatorApplication in 0.904 seconds (JVM running for 7214.165)
