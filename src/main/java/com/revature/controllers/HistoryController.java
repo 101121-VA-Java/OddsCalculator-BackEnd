@@ -33,6 +33,7 @@ public class HistoryController {
 	public List<History> getAllHistory(){
 
 		System.out.println("Getting All History");
+		
 		return hs.getAllHistory();
 	}
 	
@@ -56,15 +57,16 @@ public class HistoryController {
 	@CrossOrigin
 	@RequestMapping(method=RequestMethod.POST)
 	public ResponseEntity<String> createHistory(@RequestBody History history){
+		history.setNumOfDecks(6);
 		hs.createHistory(history);
 		System.out.println("We here!");
-		return new ResponseEntity<>(history.getGameID() + " was created.", HttpStatus.CREATED);
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
 	@CrossOrigin
-	@RequestMapping(method=RequestMethod.POST, value="/balance/{id}")
+	@RequestMapping(method=RequestMethod.POST, value="/userbalance/{id}")
 	public ResponseEntity<String> updateHistorybalance(@PathVariable(name="id", required = true)int id, @RequestBody History history){
-		hs.updateHistory(id, history, "balance");
+		hs.updateHistory(id, history, "userbalance");
 		System.out.println("We here!");
 		return new ResponseEntity<>(history.getGameID() + " was updated.", HttpStatus.OK);
 	}

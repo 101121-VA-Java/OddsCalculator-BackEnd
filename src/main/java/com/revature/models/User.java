@@ -7,7 +7,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import org.springframework.context.annotation.Primary;
+
+
+
 @Entity(name="users")
+@JsonIgnoreProperties(value = {"applications", "hibernateLazyInitializer"})
 public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -23,7 +32,10 @@ public class User {
 	private int wins;
 	@Column(nullable=true)
 	private int losses;
-	
+
+  @Column(nullable=false)
+	private int balance;
+
 	
 
 	public User() {
@@ -213,12 +225,41 @@ public class User {
 
 
 
+	public int getUserid() {
+		return userid;
+	}
+
+
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+
+
+
+	public int getBalance() {
+		return balance;
+	}
+
+
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+
+
 	@Override
 	public String toString() {
-		return "User [userID=" + userid + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", role=" + role + ", wins=" + wins + ", losses=" + losses + "]";
+		return "User [userid=" + userid + ", firstName=" + firstName + ", lastName=" + lastName + ", password="
+				+ password + ", email=" + email + ", role=" + role + ", wins=" + wins + ", losses=" + losses
+				+ ", balance=" + balance + "]";
+	}
+
+
+
+	
 	}
 	
 	
 
-}
