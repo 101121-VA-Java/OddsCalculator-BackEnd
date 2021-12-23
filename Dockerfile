@@ -1,3 +1,3 @@
-FROM openjdk:8-jdk-alpine as build
-COPY target/oddscalculator.jar  oddscalculator.jar
-ENTRYPOINT ["java", "-jar", "/oddscalculator.jar"]
+FROM openjdk:8-jdk-alpine
+COPY target/oddsCalculator.jar  oddsCalculator.jar
+ENTRYPOINT ["java", "-jar", "/oddsCalculator.jar"]
