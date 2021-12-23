@@ -122,6 +122,28 @@ public class HistoryService {
 		
 		
 	}
+
+	public int getWinsbyUserREC(int id) {
+		int wins = 0;
+		List <History> his =  hd.findByplayer_id(id);
+		for(History h: his) {
+			if(h.getOutcome().equals(Outcome.valueOf("WIN"))&&h.isFollowedRec()) {
+				wins ++;
+			}
+		}
+		return wins;
+	}
+
+	public int getWinsbyUsernotREC(int id) {
+		int losses = 0;
+		List <History> his =  hd.findByplayer_id(id);
+		for(History h: his) {
+			if(h.getOutcome().equals(Outcome.valueOf("WIN"))&&!h.isFollowedRec()) {
+				losses ++;
+			}
+		}
+		return losses;
+	}
 	
 
 }

@@ -53,6 +53,22 @@ public class HistoryController {
 		return hs.getHistorybyUser(id);
 		
 	}
+	@CrossOrigin
+	@GetMapping(value="/user/{id}/rec")
+	public int getUserHistoryWins(@PathVariable(name="id", required = true)int id){
+		
+		System.out.println("Getting User History " + id);
+		return hs.getWinsbyUserREC(id);
+		
+	}
+	@CrossOrigin
+	@GetMapping(value="/user/{id}/notrec")
+	public int getUserHistoryLosses(@PathVariable(name="id", required = true)int id){
+		
+		System.out.println("Getting User History " + id);
+		return hs.getWinsbyUsernotREC(id);
+		
+	}
 	
 	@CrossOrigin
 	@RequestMapping(method=RequestMethod.POST)
