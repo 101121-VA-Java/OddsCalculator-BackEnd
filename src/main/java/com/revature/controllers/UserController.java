@@ -55,7 +55,7 @@ public class UserController {
 		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin
 	@GetMapping("/{id}")
 	public ResponseEntity<User> getUserById(@PathVariable int id) {
 		System.out.println("Hitting Get user by ID");
