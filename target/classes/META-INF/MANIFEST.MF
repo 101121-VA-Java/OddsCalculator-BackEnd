@@ -1,6 +1,53 @@
 Manifest-Version: 1.0
-Build-Jdk-Spec: 15
+Built-By: 16038
+Build-Jdk: 15.0.1
+Class-Path: lib/spring-boot-starter-data-jpa-2.5.6.jar lib/spring-boot-s
+ tarter-aop-2.5.6.jar lib/spring-aop-5.3.12.jar lib/aspectjweaver-1.9.7.
+ jar lib/jakarta.transaction-api-1.3.3.jar lib/jakarta.persistence-api-2
+ .2.3.jar lib/hibernate-core-5.4.32.Final.jar lib/jboss-logging-3.4.2.Fi
+ nal.jar lib/javassist-3.27.0-GA.jar lib/byte-buddy-1.10.22.jar lib/antl
+ r-2.7.7.jar lib/jandex-2.2.3.Final.jar lib/dom4j-2.1.3.jar lib/hibernat
+ e-commons-annotations-5.1.2.Final.jar lib/jaxb-runtime-2.3.5.jar lib/tx
+ w2-2.3.5.jar lib/istack-commons-runtime-3.0.12.jar lib/jakarta.activati
+ on-1.2.2.jar lib/spring-data-jpa-2.5.6.jar lib/spring-data-commons-2.5.
+ 6.jar lib/spring-orm-5.3.12.jar lib/spring-context-5.3.12.jar lib/sprin
+ g-tx-5.3.12.jar lib/spring-beans-5.3.12.jar lib/spring-aspects-5.3.12.j
+ ar lib/jaxb-api-2.3.0.jar lib/springfox-boot-starter-3.0.0.jar lib/spri
+ ngfox-oas-3.0.0.jar lib/swagger-annotations-2.1.2.jar lib/swagger-model
+ s-2.1.2.jar lib/jackson-annotations-2.12.5.jar lib/springfox-spi-3.0.0.
+ jar lib/springfox-schema-3.0.0.jar lib/springfox-core-3.0.0.jar lib/spr
+ ingfox-spring-web-3.0.0.jar lib/classgraph-4.8.83.jar lib/springfox-spr
+ ing-webmvc-3.0.0.jar lib/springfox-spring-webflux-3.0.0.jar lib/springf
+ ox-swagger-common-3.0.0.jar lib/mapstruct-1.3.1.Final.jar lib/springfox
+ -data-rest-3.0.0.jar lib/springfox-bean-validators-3.0.0.jar lib/spring
+ fox-swagger2-3.0.0.jar lib/swagger-annotations-1.5.20.jar lib/swagger-m
+ odels-1.5.20.jar lib/springfox-swagger-ui-3.0.0.jar lib/classmate-1.5.1
+ .jar lib/slf4j-api-1.7.32.jar lib/spring-plugin-core-2.0.0.RELEASE.jar 
+ lib/spring-plugin-metadata-2.0.0.RELEASE.jar lib/spring-boot-starter-ac
+ tuator-2.5.6.jar lib/spring-boot-starter-2.5.6.jar lib/spring-boot-star
+ ter-logging-2.5.6.jar lib/logback-classic-1.2.6.jar lib/logback-core-1.
+ 2.6.jar lib/log4j-to-slf4j-2.14.1.jar lib/log4j-api-2.14.1.jar lib/jul-
+ to-slf4j-1.7.32.jar lib/jakarta.annotation-api-1.3.5.jar lib/snakeyaml-
+ 1.28.jar lib/spring-boot-actuator-autoconfigure-2.5.6.jar lib/spring-bo
+ ot-actuator-2.5.6.jar lib/jackson-databind-2.12.5.jar lib/jackson-core-
+ 2.12.5.jar lib/jackson-datatype-jsr310-2.12.5.jar lib/micrometer-core-1
+ .7.5.jar lib/HdrHistogram-2.1.12.jar lib/LatencyUtils-2.0.3.jar lib/spr
+ ing-boot-starter-jdbc-2.5.6.jar lib/HikariCP-4.0.3.jar lib/spring-jdbc-
+ 5.3.12.jar lib/spring-boot-starter-web-2.5.6.jar lib/spring-boot-starte
+ r-json-2.5.6.jar lib/jackson-datatype-jdk8-2.12.5.jar lib/jackson-modul
+ e-parameter-names-2.12.5.jar lib/spring-boot-starter-tomcat-2.5.6.jar l
+ ib/tomcat-embed-core-9.0.54.jar lib/tomcat-embed-el-9.0.54.jar lib/tomc
+ at-embed-websocket-9.0.54.jar lib/spring-web-5.3.12.jar lib/spring-webm
+ vc-5.3.12.jar lib/spring-expression-5.3.12.jar lib/h2-1.4.200.jar lib/s
+ pring-boot-devtools-2.5.6.jar lib/spring-boot-2.5.6.jar lib/spring-boot
+ -autoconfigure-2.5.6.jar lib/postgresql-42.2.24.jar lib/checker-qual-3.
+ 5.0.jar lib/jakarta.xml.bind-api-2.3.3.jar lib/jakarta.activation-api-1
+ .2.2.jar lib/spring-core-5.3.12.jar lib/spring-jcl-5.3.12.jar
 Implementation-Title: oddsCalculator
 Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.revature
+Implementation-URL: https://spring.io/projects/spring-boot/oddsCalculato
+ r
+Main-Class: com.revature.OddsCalculatorApplication
 Created-By: Maven Integration for Eclipse
 
