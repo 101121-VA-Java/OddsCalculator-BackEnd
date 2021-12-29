@@ -1,1 +1,2 @@
-# Scrumbob-BackEnd
+# OddsCalculator-BackEnd
+The Blackjack Recommendation Calculator will recommend the best move for a user inputted blackjack hand. Recommendations such as splitting the cards, hitting, staying, and doubling. The system also allows for registered users to keep track of past hands, including information such as game outcome, whether the recommendation was followed, and the amount won or lost on each hand. Users can also quickly input multiple games at once and view the analysis rather than getting recommendations one at a time. This history is displayed for each user in both a table and in graphical form for easy analysis. An Admin can view history from all users, as well as the history of each individual user.
